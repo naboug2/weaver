@@ -202,61 +202,6 @@ void playGame(char** wordArray, int numWords, int wordLen, int *maxSize, char st
     menu(numWords, wordLen, maxSize, wordArray);
 }
 
-// // this function runs the main loop of the game, where the user inputs words and the program checks if they are valid moves
-// // if user successfully reaches the endWord, they win game and menu function is called
-// void playGame(char** wordArray, int numWords, int wordLen, int *maxSize, char startWord[81], char endWord[81]) {
-//     int moveNum = 1; 
-//     char input[81]; 
-//     char previousWord[81];
-//     strcpy(previousWord, startWord); // intialize startWord to previous
-//     strcpy(input, startWord); // initalize to the startword input
-    
-//     printf("On each move enter a word of the same length that is at most 1 " "character different and is also in the dictionary.\n");
-//     printf("You may also type in 'q' to quit guessing.\n");
-    
-//     while (strcmp(input, endWord) != 0) {
-        
-//         printf("\n%d. Previous word is '%s'. Goal word is '%s'. Next word: ", moveNum, previousWord, endWord);
-//         scanf("%s", input);
-
-//         // if user iputs "q" call menu function
-//         if (strcmp(input, "q") == 0) {
-//             menu( numWords, wordLen, maxSize, wordArray);
-//         }
-
-//         // check if users input is correct length
-//         else if (strlen(input) != wordLen) {
-//             printf("Your word, '%s', is not a %d-letter word. Try again.\n", input, wordLen);
-//             strcpy(input, previousWord); // update input
-//             continue; // start loop again
-//         }
-
-//         //check if users input is in dictionary
-//         else if(!validWord(input, wordArray,numWords)) {
-//             printf("Your word, '%s', is not a valid dictionary word. Try again.\n", input);
-//             strcpy(input, previousWord);  // update input
-//             continue; // start loop again
-//         }
-
-//         // check if user changed word by exactly one char
-//         else if (!validMove(input, previousWord)) {
-//             printf("Your word, '%s', is not exactly 1 character different. Try again.\n", input);
-//             strcpy(input, previousWord); // update input
-//             continue; // start loop again
-//         } 
-
-//         // check if users input check endWord and break out of loop
-//         else if (strcmp(input, endWord) == 0) {
-//             printf("Congratulations! You changed '%s' into '%s' in %d moves.\n", startWord, endWord, moveNum);
-//             menu( numWords, wordLen, maxSize, wordArray); // call menu function afte user wins
-//         }
-
-//         moveNum++; // increment move number is user inputs correct guess
-//         strcpy(previousWord, input); // update previous word
-        
-//     } 
-// }
-
 // this function prompts user to input starting and ending word or 'r' for a random word
 // it checks if the inputted words are valid and continues prompting user until word is valid, then playGame function is called
 void getWord(int wordLen, char** wordArray, int *maxSize, int numWords) {
